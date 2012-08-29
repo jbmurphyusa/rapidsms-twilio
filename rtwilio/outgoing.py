@@ -8,10 +8,6 @@ from rapidsms.backends.base import BackendBase
 class TwilioBackend(BackendBase):
     """A RapidSMS backend for Twilio (http://www.twilio.com/)."""
 
-    def start(self):
-        """Override BackendBase.start(), which never returns."""
-        self._running = True
-
     def configure(self, config=None, **kwargs):
         self.config = config
         self.client = TwilioRestClient(self.config['account_sid'],
